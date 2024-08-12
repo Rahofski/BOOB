@@ -8,6 +8,11 @@ document.addEventListener("keydown", function(event)
     jump();
 })
 
+document.addEventListener("mousedown", function(event)
+{
+    jump();
+})
+
 function jump () {
     if (dino.classList != "jump") {dino.classList.add("jump");}
     setTimeout (function() 
