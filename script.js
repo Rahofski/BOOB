@@ -1,96 +1,43 @@
-.game
+const dino = document.getElementById("dino");
+
+const cactus = document.getElementById("cactus");
+
+let points = 0;
+
+let rec = 0;
+document.addEventListener("keydown",function(event)
 {
-    width: 600px;
-    height: 200px;
-    border-bottom: 1px solid #000;
-    margin: auto;
+    jump();
+    document.getElementById('point').innerHTML = `${points}`;
+})
 
-}
-
-
-.record
+document.addEventListener("touchstart",function(event)
 {
-    width: 140px;
-    height: 60px;
-    border: 1px solid green;
-    margin: auto;
-    margin-top: 100px;
-    padding-left: 10px;
-}
-
-#dino
-{
-    width: 50px;
-    height: 50px;
-    background-image: url(png-transparent-brand-logo-design-white-text-logo.png);
-    background-size: 50px 50px;
-    position: relative;
-    top:150px;
-}
-
-#cactus
-{
-    width: 40px;
-    height: 40px;
-    background-image: url(Things_My_Dick_Does_049.png);
-    background-size: 40px 40px;
-    position: relative;
-    top:110px;
-    left:560px;
-    animation: cactusMov 1.0s infinite linear;
-
-}
-
-#points{
-    position: relative;
-    left:500px;
-}
+    jump();
+    document.getElementById('point').innerHTML = `${points}`;
+})
 
 
-
-
-@keyframes cactusMov
-{
-    0%{
-        left:560px;
-    }
-    100%
+function jump () {
+    if (dino.classList != "jump") {dino.classList.add("jump");}
+    setTimeout (function() 
     {
-        left: -20px;
-    }
+        dino.classList.remove("jump");
+    }, 300);
+    points++;
 }
 
+let isAlive = setInterval(function(){
 
-.jump
-{
+    let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
+    let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
+    if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) 
+        {
+            if (points > rec ) rec = points;
+            document.getElementById('rec').innerHTML = `${rec}`;
+            points = 0;
+            document.getElementById('point').innerHTML = `${points}`;
+            alert ("YEAH");
+        } 
 
-    animation: jump 0.3s linear;
-}
-
-
-@keyframes jump
-{
-    0%{
-        top:150px;
-    }
-
-    30%{
-    
-        top:130px;
-    }
-    50%
-    {
-        top:80px;
-    
-    }
-
-    80%
-    {
-        top:130px;
-    }
-
-    100%
-    {
-        top: 150px;
-    }
-}
+})
