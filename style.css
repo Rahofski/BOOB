@@ -1,3 +1,7 @@
+body{
+    flex-direction: row;
+}
+
 .game
 {
     width: 600px;
@@ -46,11 +50,33 @@
     left:500px;
 }
 
+.text
+{
+    display: flex;
+    justify-content: center;
+}
+.first_word, .second_word
+{
+    display: flex;
+    margin: 10px;
+    font-size: 50px;
+}
 
-@media (max-width:400px){
-    #cactus{
-        animation: cactusM 1.0s infinite linear;
-    }
+.B
+{
+    animation: letter1 1.0s infinite linear;
+}
+
+.U 
+{
+    animation: letter2 1.0s infinite linear;
+}
+
+
+
+
+@media (max-width:400px)
+{
     #points{
         
         left:200px;
@@ -68,7 +94,7 @@
     @keyframes cactusM
     {
         0%{
-        left: 350px;
+        left:max-width;
     }
     100%
     {
@@ -76,9 +102,41 @@
     }
 }
 
+}
 
+
+@keyframes letter1
+{
+    0%{
+        color:blue;
+    }
+    50%
+    {
+        color:yellow;
+    }
+    100%
+    {
+        color:red;
+    }
 
 }
+
+@keyframes letter2
+{
+    0%{
+        color:orange;
+    }
+    50%
+    {
+        color:purple
+    }
+    100%
+    {
+        color:green;
+    }
+
+}
+
 
 @keyframes cactusMov
 {
@@ -94,7 +152,6 @@
 
 .jump
 {
-
     animation: jump 0.3s linear;
 }
 
