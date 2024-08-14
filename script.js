@@ -47,12 +47,7 @@
 }
 
 
-@media (max-width:400px){
-    #points{
-        
-        left:300px;
-    }
-}
+
 
 @keyframes cactusMov
 {
