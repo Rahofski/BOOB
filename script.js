@@ -11,6 +11,11 @@ document.addEventListener("keydown",function(event)
     document.getElementById('point').innerHTML = `${points}`;
 })
 
+document.addEventListener("touchstart",function(event)
+{
+    jump();
+    document.getElementById('point').innerHTML = `${points}`;
+})
 
 
 function jump () {
