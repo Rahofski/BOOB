@@ -48,6 +48,9 @@
 
 
 @media (max-width:400px){
+    #cactus{
+        animation: cactusM 1.0s infinite linear;
+    }
     #points{
         
         left:200px;
@@ -62,10 +65,10 @@
 
     }
 
-    @keyframes cactusMov
+    @keyframes cactusM
     {
         0%{
-        left:100%;
+        left: 100%;
     }
     100%
     {
