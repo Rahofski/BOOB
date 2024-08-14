@@ -41,3 +41,4 @@ let isAlive = setInterval(function(){
         } 
 
 })
+    document.getElementById('point').inner
